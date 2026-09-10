@@ -1,0 +1,74 @@
+export type User = { slug: string; name: string; username: string; avatar: string; banner: string; profession: string; bio: string; location: string; joined: string; verified?: boolean; private?: boolean };
+export const users: User[] = [
+  { slug:"iradesai",name:"Ira Desai",username:"iradesai",avatar:"https://framerusercontent.com/images/UX3EPNuI2AslX3KcPrt63coRtI.png",banner:"https://framerusercontent.com/images/8xIKm27e9llzTNaDc978xmN5o4.png",profession:"Design & Software",bio:"Perhaps everything turns out good.",location:"Ahmedabad",joined:"January 2025",verified:true },
+  { slug:"yashchaubey",name:"Yash Chaubey",username:"yashchaubey",avatar:"https://framerusercontent.com/images/KBEYCAL9Wdr3uVmaOGAwEWdhWbY.png",banner:"https://framerusercontent.com/images/OhPooBWpfKd1RnfWcQBXxnMb14.png",profession:"Software Engineer",bio:"noRegret.",location:"Mumbai",joined:"February 2020",verified:true },
+  { slug:"maisamayhoon",name:"Samay Raina",username:"maisamayhoon",avatar:"https://framerusercontent.com/images/mkXQP2OOyJRYyC7p6lyW9eumKc.png",banner:"https://framerusercontent.com/images/h6DRG8r7bOxsbwCurD3MDAdWK2I.png",profession:"Comedian",bio:"For business: contact@samayraina.co",location:"Mumbai",joined:"April 2026",verified:true },
+  { slug:"krutikmaru",name:"Krutik Maru",username:"krutikmaru",avatar:"https://framerusercontent.com/images/ZUxsaFVNLDpELRHKLn8m1NiOdI.jpg",banner:"https://framerusercontent.com/images/Dy8773eDG1QgkgAAzU8YTQRx0c.png",profession:"Framer Expert",bio:"UI UX Designer | Software Developer | Music Producer",location:"Ahmedabad",joined:"July 2022",verified:true },
+  { slug:"gurmeet.kalha",name:"Gurmeet",username:"gurmeet.kalha",avatar:"https://framerusercontent.com/images/vsoheXVxUFRwBTMV1b0aGJgmNvc.png",banner:"https://framerusercontent.com/images/jKob5aloRjk8whjjZ8OYQyZX7nc.png",profession:"Software Engineer & Musician",bio:"22🎸🏍️",location:"Mumbai",joined:"January 2026",private:true },
+];
+export const currentUser=users[0];
+export const userBySlug=(slug:string)=>users.find(u=>u.slug===slug)??currentUser;
+
+export type Story={slug:string;title:string;cover:string;media:string[]};
+export const stories:Story[]=[
+ {slug:"cars",title:"Cars",cover:"https://framerusercontent.com/images/vgdiAOA2bigZshp9Q2McPmp4yVw.png",media:["https://framerusercontent.com/images/vgdiAOA2bigZshp9Q2McPmp4yVw.png","https://framerusercontent.com/images/IgNuBCt7W4VLmqcXW7ZuG2Ijid4.png","https://framerusercontent.com/images/wSIrHiPyh52iAxBGHsRCJBls6Y.mp4","https://framerusercontent.com/images/5bAcJxoUDqIfPgZ6BJjtwTMh3V0.png"]},
+ {slug:"university",title:"University",cover:"https://framerusercontent.com/images/v0q4XU77GF4GSPHuknrfrdDRU.png",media:["https://framerusercontent.com/images/hK0Nr2pdPEupN4a9spODohlIU.png","https://framerusercontent.com/images/J9gtMXnhPGIxI0NNQ9ViYuGpA.png","https://framerusercontent.com/images/GcgWq1UDFljhkBbXkmptmYVD3I.png","https://framerusercontent.com/images/yzragaLONMDbnOHxgYWtMLDls7k.png"]},
+ {slug:"travel",title:"Travel",cover:"https://framerusercontent.com/images/CG6J7iTv1t2hHtJOcPswfKvess4.png",media:["https://framerusercontent.com/images/9NgYL6ThYyehPcLL51nnANThA.mp4","https://framerusercontent.com/images/QEb3otAVEp6OSlNyFnPYyy3org.png","https://framerusercontent.com/images/N64C5NJ52KxFWhx4Ob6M7ug6zCY.png","https://framerusercontent.com/images/Im2MpbgttCQPQOiZGWHN0gfe7Ms.png","https://framerusercontent.com/images/q0b74ZOqJztTL5vpJb3gkAuzg.png","https://framerusercontent.com/images/zo7xtWD0GGOuntitCC9X5tqIk.png","https://framerusercontent.com/images/SnQWFzxpm19WqiYhT0dr90Mi9s.png"]},
+ {slug:"work",title:"Work",cover:"https://framerusercontent.com/images/UqQzKtRx8zPa5ZqIx4IRWghiDgw.png",media:["https://framerusercontent.com/images/UqQzKtRx8zPa5ZqIx4IRWghiDgw.png"]},
+];
+
+export type Post={slug:string;author:string;caption:string;date:string;images?:string[];video?:string;fill?:boolean;pinned?:boolean;threads?:number};
+export const posts:Post[]=[
+ {slug:"sip-smile-ad",author:"iradesai",caption:"Worked for an ad for Sip & Smile :)",date:"5 months ago",pinned:true,images:["https://framerusercontent.com/images/a1KZsGNpIVx9ZYEQZjQLrnSnAY.png"]},
+ {slug:"business-class",author:"iradesai",caption:"Off we go again…",date:"7 months ago",pinned:true,images:["https://framerusercontent.com/images/TMVg9f70VBsrGayWbHHyYtZxg3E.png","https://framerusercontent.com/images/kvQmHGQC82U9rvt23rIT7iEs5c.png"]},
+ {slug:"bmw-m5-ride",author:"iradesai",caption:"German cars are the best ❤️",date:"7 months ago",images:["https://framerusercontent.com/images/P1uRnsmLfjokw5v0G0fwHXdvAYQ.png"]},
+ {slug:"did-i-cook",author:"iradesai",caption:"Did I cook? 🤓",date:"9 months ago",images:["https://framerusercontent.com/images/vgKaia9BJzN9QCYpYvjOqjHjE.png","https://framerusercontent.com/images/vkBknnYOX0gSJ3MrzOXbbAZ8o.png"]},
+ {slug:"got-the-tickets",author:"iradesai",caption:"Finally got the ticket for @maisamayhoon's show",date:"9 months ago",images:["https://framerusercontent.com/images/20xqaxQwSW2OabYSCM9absvDBo.png"],threads:1},
+ {slug:"vantara-march-2025-sales",author:"iradesai",caption:"This is insane 😭 never thought Vantara ai would be this massive ❤️",date:"Last year",images:["https://framerusercontent.com/images/OyjnmH0BQ3RqOAz5c6KXzLYhl4.png"]},
+ {slug:"first-sales-vantara-ai",author:"iradesai",caption:"Oh my goddd! I can't believe this, I am actually making sales. Got 4 sales today on Vantara ai 🕉️ 🙏🏼 ❤️ 🥺",date:"Last year",images:["https://framerusercontent.com/images/JoWt2XLtHH7UYzArbQZ8Le8QYo.png"]},
+ {slug:"nightime-kia-carwash",author:"iradesai",caption:"How can a carwash feel so heavenly 💖 after a long day, this hits different 😭.",date:"Last year",images:["https://framerusercontent.com/images/AMd3EW6cDm1s6rXCJ5MLwhknXs.png"]},
+ {slug:"club-party-sdu",author:"iradesai",caption:"🥳 @yashchaubey",date:"2 years ago",video:"https://framerusercontent.com/assets/FGDr5arHO42HXfk5bWbnrdTXa90.mp4",images:["https://framerusercontent.com/images/nApogjlStj3BkP9ZMJIdW4OJ44.png"]},
+ {slug:"university-evening",author:"iradesai",caption:"Where time slows down a bit",date:"3 years ago",images:["https://framerusercontent.com/images/CG6J7iTv1t2hHtJOcPswfKvess4.png","https://framerusercontent.com/images/l00IyG6LiJI2ok2o8y4Nvr5wuI.png"]},
+ {slug:"office-coffee",author:"iradesai",caption:"Step 1: Coffee. Step 2: Everything else.",date:"Last year",images:["https://framerusercontent.com/images/UqQzKtRx8zPa5ZqIx4IRWghiDgw.png"]},
+ {slug:"performed-in-san-jose-civic",author:"maisamayhoon",caption:"Performed in San Jose Civic | Grateful 🙏❤️",date:"Last year",fill:true,images:["https://framerusercontent.com/images/bt8wyoH47gylGlLgMWtAirqKA.jpg"],threads:2},
+ {slug:"samay-ranveer",author:"maisamayhoon",caption:"My Best Friend",date:"Last year",images:["https://framerusercontent.com/images/s3LNj3IHnryn5SfnxDwC901U6g.jpeg"]},
+ {slug:"vantara-ai-is-live",author:"iradesai",caption:"Vantara ai is live",date:"Last year",images:["https://framerusercontent.com/images/6HR29ueU3wbigi8LisDZMfojrA.png","https://framerusercontent.com/images/A5782eLBjgFjR2jiYipkXZrjVFw.png"]},
+ {slug:"soft-launch-for-vantaraa-ai",author:"iradesai",caption:"I've actually did something, here's a small glimpse of what is coming… 👀",date:"Last year",fill:true,images:["https://framerusercontent.com/images/YktPNIAto1qnfYInqAJWyHu3HE.png"]},
+ {slug:"making-an-app",author:"iradesai",caption:"Watch me build something crazy",date:"Last year",fill:true,images:["https://framerusercontent.com/images/MqXeOlTmIbrbuyUyRjD4IjKobk.png"]},
+ {slug:"new-macbook-2022",author:"iradesai",caption:"What should I install first?",date:"3 years ago",images:["https://framerusercontent.com/images/dsybqnYr0b3Q4ee9RjHEo9mAI.png"]},
+ {slug:"mid-sem-project",author:"iradesai",caption:"Turns out, my model and I both learned a lot",date:"3 years ago",images:["https://framerusercontent.com/images/mLmBHJcI0NPCp1Snve1y8tvFMk.png"]},
+ {slug:"krutik-2",author:"krutikmaru",caption:"This is a video",date:"7 months ago",video:"https://framerusercontent.com/assets/naqPx267kB8ucvgyXdi147Swzk.mp4",images:["https://framerusercontent.com/images/bKD3EDgeUGuIvjSkpXOs1Iv4k.jpg"]},
+ {slug:"jai-shree-krishna",author:"krutikmaru",caption:"Jai Shree Krishna 🙏🏼",date:"7 months ago",fill:true,images:["https://framerusercontent.com/images/vcJWMf2fPoTNt03uyPFMjtrEM3k.jpg"]},
+];
+
+export type Article={slug:string;title:string;caption:string;thumbnail:string;date:string;readTime:string;featured?:boolean};
+export const articles:Article[]=[
+ {slug:"i-built-12-side-projects.-only-one-mattered",title:"I Built 12 Side Projects. Only One Mattered",caption:"I thought consistency meant building more. turns out, it meant building better.",thumbnail:"https://framerusercontent.com/images/Ry4ESePbCnUPURv6NVbQzb1wVA.png",date:"Apr 15, 2026",readTime:"5 min read"},
+ {slug:"why-clean-ui-isn’t-enough-anymore",title:"Why “Clean UI” Isn’t Enough Anymore",caption:"Clean doesn’t mean effective. it just means… clean.",thumbnail:"https://framerusercontent.com/images/wIQMO8KJ6Mq1DajTCkkCmNOD2y8.png",date:"Apr 3, 2026",readTime:"5 min read"},
+ {slug:"why-most-side-projects-fail-before-they-even-start",title:"Why Most Side Projects Fail Before They Even Start",caption:"Your project didn’t fail. you just never gave it a real chance.",thumbnail:"https://framerusercontent.com/images/do490jApaHaAoRJnyi0sisW1Q.png",date:"Mar 2, 2026",readTime:"5 min read"},
+ {slug:"why-frappe-erp-is-a-better-choice-than-you-think",title:"Why Frappe ERP Is a Better Choice Than You Think",caption:"Everyone talks about erp being complex. frappe makes it… actually usable.",thumbnail:"https://framerusercontent.com/images/o3lrNUlbx98d3A2KpHKikgvwkTA.png",date:"Feb 15, 2026",readTime:"5 min read"},
+ {slug:"how-i-became-a-class-topper-every-semester",title:"How I Became a Class Topper Every Semester",caption:"I didn’t study more. i just stopped studying randomly.",thumbnail:"https://framerusercontent.com/images/hK0Nr2pdPEupN4a9spODohlIU.png",date:"Jan 18, 2026",readTime:"6 min read"},
+ {slug:"i-worked-in-an-ad-for-sip-smile",title:"I worked in an ad for Sip & Smile",caption:"I wasn’t trying to get brand deals. i was just posting consistently.",thumbnail:"https://framerusercontent.com/images/zwz6acBzot53vKO8DBFuQf17TQ.png",date:"Dec 12, 2025",readTime:"5 min read",featured:true},
+ {slug:"i-sold-vantaraa-ai-for-2.5m",title:"I Sold Vantaraa AI for $2.5M",caption:"I didn’t start it to sell. i just wanted to build something useful.",thumbnail:"https://framerusercontent.com/images/9eNuDvXz4wo0RbUBKvaMix9xow.png",date:"Sep 25, 2025",readTime:"6 mins",featured:true},
+ {slug:"some-days-are-just-for-slowing-down",title:"Some Days Are Just for Slowing Down",caption:"Not every day needs to be productive to be meaningful.",thumbnail:"https://framerusercontent.com/images/fE7KL7XPyMWrz3mcW263RCjKFo.png",date:"Feb 25, 2025",readTime:"4 min read"},
+ {slug:"why-your-portfolio-isn’t-getting-you-clients",title:"Why Your Portfolio Isn’t Getting You Clients",caption:"Your portfolio looks good. it just doesn’t say anything.",thumbnail:"https://framerusercontent.com/images/BBOvoOG9EA2apdJuTMxZTXsyDo.png",date:"Jan 20, 2025",readTime:"6 min read"},
+];
+
+export type Product={slug:string;title:string;type:"Framer Template"|"Course"|"Service";price:number;image:string;summary:string};
+export const products:Product[]=[
+ {slug:"calories-framer-template",title:"Calories - AI SaaS App landing Template",type:"Framer Template",price:0,image:"https://framerusercontent.com/images/pmblI7JkVQPjcqCBo5tWxaHef0E.png",summary:"A polished and high-performing AI SaaS app landing page built in Framer."},
+ {slug:"scrollfolio-framer-template",title:"Scrollfolio — Infinite Scrolling Portfolio",type:"Framer Template",price:0,image:"https://framerusercontent.com/images/bDGG5ghV2cLfgqokyyct6B7zBI.png",summary:"A unique infinite scrolling portfolio for bold designers, artists, and creatives."},
+ {slug:"payer-framer-template",title:"Payer — Fintech & Payment App Landing Page",type:"Framer Template",price:0,image:"https://framerusercontent.com/images/DLIVI0kgOmHOaFwlApjkmNM7o6k.png",summary:"A high-converting Framer template for fintech startups and payment apps."},
+ {slug:"elara-framer-template",title:"Elara — Luxury Jewelry & Fashion Template",type:"Framer Template",price:59,image:"https://framerusercontent.com/images/FhnD10SgLNwESynvWevykW4xSM.png",summary:"A premium template for high-end jewelry, fashion, and lifestyle brands."},
+ {slug:"mansory-framer-template",title:"Mansory — Creative Layout Portfolio Template",type:"Framer Template",price:0,image:"https://framerusercontent.com/images/mM3AEqWQRnLVkU17mBfLh1Y.png",summary:"A responsive masonry-style portfolio made for creatives."},
+ {slug:"havencraft-framer-template",title:"Havencraft — Interior Designer & Architect",type:"Framer Template",price:49,image:"https://framerusercontent.com/images/MfBBueaVV7IUvti8v6223H72MSg.png",summary:"A customizable portfolio template for interior designers and architects."},
+ {slug:"learn-framer-full-course",title:"Learn Framer - Full Course",type:"Course",price:299,image:"https://framerusercontent.com/images/hNIv08ZwglC0ylGtCjyMRFsKrk.png",summary:"Learn Framer from the foundations through advanced production workflows."},
+ {slug:"0-to-10k-followers-in-1-month",title:"0 to 10k followers in 1 month",type:"Course",price:159,image:"https://framerusercontent.com/images/qNFJFEIKbGP3i2eCXLxleKD28M.png",summary:"A practical course on building a focused social audience."},
+ {slug:"framer-website-design-service",title:"Framer Website Design",type:"Service",price:5000,image:"https://framerusercontent.com/images/u7wmIZiI1kAYCYgfnLbwGx54Ag.png",summary:"High-performance Framer websites crafted to feel fast and intentional."},
+ {slug:"mobile-app-development-service",title:"Mobile App Development",type:"Service",price:2500,image:"https://framerusercontent.com/images/rmfxgUe4Ecpv6NsoCeM85DZ9xiU.png",summary:"Clean mobile apps using Swift, Flutter, or React Native."},
+ {slug:"brand-identity-design-service",title:"Brand Identity Design",type:"Service",price:1000,image:"https://framerusercontent.com/images/1HCYpUXOLldcEUiFV4gaVe9XEE.png",summary:"A cohesive brand identity designed to be instantly recognizable."},
+];
+
+export const notifications=[
+ ["Started a new project","7 months ago","cube"],["Going for a vacation","8 months ago","pin"],["I worked in an ad","9 months ago","image"],["Launched my first course","9 months ago","image"],["New Framer template launched - Calories","10 months ago","flag"],["Vantaraa made its first sale 💶","Last year","money"],["Shipped my new app - Vantaraa ai","Last year","app"],["Started a personal project","Last year","user"],["Graduated from college today","2 years ago","cap"],["Launched my first Framer template","2 years ago","flag"],
+] as const;

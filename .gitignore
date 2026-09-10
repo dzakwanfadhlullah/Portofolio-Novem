@@ -1,3 +1,9 @@
 .vercel
 .DS_Store
 Thumbs.db
+node_modules
+.next
+framer-audit.json
+framer-components.json
+tsconfig.tsbuildinfo
+lucas-mateo-next/

@@ -1,0 +1,7 @@
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { CaretLeft, CaretRight, X } from "@phosphor-icons/react";
+import { currentUser, Story } from "@/lib/data";
+export function StoryViewer({story}:{story:Story}){const [index,setIndex]=useState(0);useEffect(()=>{const id=setTimeout(()=>setIndex(i=>Math.min(i+1,story.media.length-1)),5000);return()=>clearTimeout(id)},[index,story.media.length]);const src=story.media[index];const video=/\.mp4($|\?)/.test(src);return <main className="story-viewer"><div className="story-progress">{story.media.map((_,i)=><span key={i}><motion.i initial={{scaleX:0}} animate={{scaleX:i<index?1:i===index?1:0}} transition={{duration:i===index?5:0,ease:"linear"}}/></span>)}</div><header><img src={currentUser.avatar} alt=""/><b>{currentUser.username}</b><small>2h</small><Link href="/"><X/></Link></header><AnimatePresence mode="wait"><motion.div className="story-media" key={src} initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>{video?<video src={src} autoPlay muted loop playsInline/>:<img src={src} alt={story.title}/>}</motion.div></AnimatePresence><button className="story-prev" onClick={()=>setIndex(Math.max(0,index-1))}><CaretLeft/></button><button className="story-next" onClick={()=>setIndex(Math.min(story.media.length-1,index+1))}><CaretRight/></button></main>}

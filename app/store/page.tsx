@@ -1,0 +1,7 @@
+"use client";
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import { BookOpen, Briefcase, MagnifyingGlass, Storefront } from "@phosphor-icons/react";
+import { PageHeader } from "@/components/PostCard";
+import { products } from "@/lib/data";
+export default function Store(){const [filter,setFilter]=useState("All");const shown=useMemo(()=>filter==="All"?products:products.filter(p=>p.type===filter),[filter]);const groups=["Framer Template","Course","Service"] as const;return <><PageHeader title="Store"/><div className="listing-tools store-tools"><label><MagnifyingGlass/><input placeholder="Search..."/></label><select value={filter} onChange={e=>setFilter(e.target.value)}><option>All</option>{groups.map(g=><option key={g}>{g}</option>)}</select></div>{groups.map(group=>{const list=shown.filter(p=>p.type===group);if(!list.length)return null;const Icon=group==="Course"?BookOpen:group==="Service"?Briefcase:Storefront;return <section className={`store-group ${group==="Framer Template"?"templates":""}`} key={group}><header><h2><Icon weight="fill"/>{group==="Framer Template"?"Framer templates":`${group}s`}</h2><span>{list.length} {group==="Framer Template"?"Templates":`${group}s`}</span></header><div>{list.map(p=><Link href={`/store/${p.slug}`} className="product-card" key={p.slug}><img src={p.image} alt=""/><b>{p.title}</b><small>{p.price?`$${p.price}`:"Free"}</small></Link>)}</div></section>})}</>}

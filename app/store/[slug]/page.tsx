@@ -1,0 +1,6 @@
+import { notFound } from "next/navigation";
+import { Check, Clock, Storefront } from "@phosphor-icons/react/dist/ssr";
+import { PageHeader } from "@/components/PostCard";
+import { products } from "@/lib/data";
+export function generateStaticParams(){return products.map(({slug})=>({slug}))}
+export default async function ProductPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const product=products.find(p=>p.slug===slug);if(!product)notFound();return <><PageHeader title={product.type} back/><article className="product-detail"><img className="product-hero" src={product.image} alt=""/><div className="product-intro"><span>{product.type}</span><h1>{product.title}</h1><p>{product.summary}</p><div><b>{product.price?`$${product.price}`:"Free"}</b><button>{product.price?"Get it now":"Use for free"}</button></div></div><section><h2>About this {product.type}</h2><p>{product.summary} Built with a responsive structure and carefully considered interactions so the experience stays consistent across every screen.</p><ul><li><Check/>Fully responsive layouts</li><li><Check/>Clean, editable structure</li><li><Check/>Smooth native interactions</li><li><Clock/>Instant access after checkout</li></ul></section></article></>}
